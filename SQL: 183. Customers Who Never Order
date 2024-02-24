@@ -1,0 +1,12 @@
+# Write your MySQL query statement below
+
+# I made a query joing the two tables to find the customers who do not order. I joined them using a LEFT OUTER JOIN
+# so that I can get the missing values as well, for an INNER JOIN will leave those values out since the table holding orders doe not have
+# customer ids of those who never placed an order. And if we used INNER JOIN in this instance, we wouldn't be able to get the customers' names of
+# those who never ordered, they would be lost. After, using the LEFT OUTER JOIN, I now get NULL values, so where ever the customer id is NULL in the Orders table
+# for customer id. Then, I find the name of those who customer ids are not in the Order Table.
+SELECT Customers.name AS Customers
+FROM Customers
+LEFT JOIN Orders
+ON Customers.id=Orders.customerId
+WHERE Orders.customerId IS NULL;

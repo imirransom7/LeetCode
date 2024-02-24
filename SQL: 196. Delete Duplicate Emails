@@ -1,0 +1,9 @@
+# Write your MySQL query statement below
+
+# using a self join on the Person Table based on the same email value. The WHERE Clause makes it so
+# the higher ids get deleted where there is an email duplicate, keeping the lower ids
+DELETE e1
+FROM Person AS e1
+INNER JOIN Person AS e2
+ON e1.email=e2.email
+WHERE e1.id > e2.id;

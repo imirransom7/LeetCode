@@ -6,4 +6,5 @@ DELETE e1
 FROM Person AS e1
 INNER JOIN Person AS e2
 ON e1.email=e2.email
+# This ensures that the email with the lower id will not be deleted by comparing the duplicate emails' ids against each other
 WHERE e1.id > e2.id;

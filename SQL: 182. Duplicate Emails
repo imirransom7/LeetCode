@@ -1,0 +1,12 @@
+# Write your MySQL query statement below
+# This query is finding the duplicate emails by finding the count of the same emails by using group by
+# to group by the email columns and using HAVING to see which emails have more than one of the same email;
+# showing that it is a duplicate
+
+# Selecting the email from the Person Table
+SELECT email AS Email
+FROM Person
+# grouping by the email column
+GROUP BY Email
+# checking which emails have duplicates by seeing how many values have the same emial by using the COUNT() and seeing if count is more than 1
+HAVING COUNT(*) > 1;

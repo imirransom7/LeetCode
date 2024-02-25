@@ -1,0 +1,7 @@
+# Write your MySQL query statement below
+# doing a query to find those who have a referee id that is not 2, and if it is NULL
+# I make a SELECT statement and then use the WHERE clause to give the condition if the 
+# referee id is not 2 and is NOT NULL
+SELECT name
+FROM Customer
+WHERE referee_id != 2 OR referee_id IS NULL;

@@ -1,0 +1,9 @@
+# Write your MySQL query statement below
+# Get the customer that has the most orders. I group by the customer_number and
+# then order by the count of the number of customers orders in desc order and then limit the query by 1
+
+SELECT customer_number
+FROM Orders
+GROUP BY customer_number
+ORDER BY COUNT(customer_number) DESC
+LIMIT 1;

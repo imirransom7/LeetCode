@@ -1,0 +1,9 @@
+# Write your MySQL query statement below
+# writing a query that finds the classes that have at least 5 students
+# To do this, I select the class column from the courses table, grouping by the class column.
+# Then I use a HAVING clause since we cannot use the WHERE clause while using an aggregate. It is 
+# used to pass the condition to see if the count of the classes are at least 5
+SELECT class
+FROM Courses
+GROUP BY class
+HAVING COUNT(class) >= 5;

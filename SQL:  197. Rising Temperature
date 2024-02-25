@@ -1,0 +1,16 @@
+# Write your MySQL query statement below
+
+
+SELECT w2.id AS Id
+FROM Weather AS w1
+INNER JOIN Weather AS w2
+# Joining on a self join by making the the second table the dates for the previous day
+ON DATEDIFF(w1.recordDate, w2.recordDate) = -1
+WHERE w2.temperature > w1.temperature;
+
+# OR
+# This is a solution without a join, just selecting twice from the same table
+SELECT w1.id
+FROM Weather AS w1, Weather AS w2
+# Then, the condition to be met is if the date difference is by -1 (by one day) and if the previous day has a higher temperature
+WHERE DATEDIFF(w1.recordDate , w2.recordDate) = 1 AND WHERE w1.Temperature > w2.Temperature

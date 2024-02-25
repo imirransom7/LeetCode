@@ -1,0 +1,7 @@
+# Write your MySQL query statement below
+
+# getting the first login date for each player. To do this, I use the MIN() aggregate on the even_date column to get the least/earliest time
+# which will give me the first login day. Then, I use Group By statement on the player_id column to group all the players and their first login
+SELECT player_id, MIN(event_date) AS first_login
+FROM Activity
+GROUP BY player_id;

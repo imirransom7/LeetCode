@@ -1,0 +1,11 @@
+# Write your MySQL query statement below
+
+# Joining both tables off of the primary key empId and seeing which employees have bonuses less than 1000
+# I use a LEFT OUTER JOIN because I am to query out those who do not have bonuses i.e. NULL values. If an
+# INNER JOIN is used, those NULL values will not appear in the query. So, to make sure the NULL values show up,
+# I pass a condition that will give me the bonuses less than 1000 and if the bonus is also NULL
+SELECT Employee.name, Bonus.bonus
+FROM Employee
+LEFT JOIN Bonus
+ON Employee.empId=Bonus.empId
+WHERE Bonus.bonus < 1000 OR Bonus.bonus IS NULL;

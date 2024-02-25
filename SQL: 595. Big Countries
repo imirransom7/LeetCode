@@ -1,0 +1,8 @@
+# Write your MySQL query statement below
+# querying the biggest countries. The biggest countries will have at least an area of 3,000,000
+# or at least a population of 25,000,000. I return the name, population, and area and use the
+# WHERE clause to pass the conditions of if the area is at least 3,000,000 or the
+# population is 25,000,000
+SELECT name, population, area
+FROM World
+WHERE area >= 3000000 OR population >= 25000000;

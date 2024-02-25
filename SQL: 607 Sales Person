@@ -1,0 +1,18 @@
+# Write your MySQL query statement below
+# Here I was to find the sales person that did not have any orders with the 
+# company 'RED'. i joined 3 tables together using the primary and foreign keys associated with each other
+# and then I maade a where clause to find the sales persons that have orders with those companies, that way
+# I can get the opposite names i.e. the ones who do not have orders with the company querying over this query with
+# a select statement that will have a where clause querying the the sales persons that are not with the nested select statement
+
+SELECT SalesPerson.name
+FROM SalesPerson
+WHERE SalesPerson.name NOT IN (
+    SELECT SalesPerson.name
+    FROM Orders
+    LEFT JOIN SalesPerson
+    ON Orders.sales_id=SalesPerson.sales_id
+    LEFT JOIN Company
+    ON Orders.com_id=Company.com_id
+    WHERE Company.name = 'RED'
+);

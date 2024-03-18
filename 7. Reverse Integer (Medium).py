@@ -1,4 +1,6 @@
-s = str(x)[::-1]
+class Solution:
+    def reverse(self, x: int) -> int:
+        s = str(x)[::-1]
         # getting the maximum and minimum range for a signed 32-bit integer range
         num_max = 2**31
         num_min = -2**31
@@ -11,12 +13,8 @@ s = str(x)[::-1]
             s = int(s)
             # changing the number back into a negative
             s = s * (-1)
-            if s > num_max or s < num_min:
-                return 0
-            else:
-                return s
+    
+        if int(s) > num_max or int(s) < num_min:
+            return 0
         else:
-            if int(s) > num_max or int(s) < num_min:
-                return 0
-            else:
-                return int(s)
+            return int(s)
